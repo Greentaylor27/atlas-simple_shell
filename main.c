@@ -9,7 +9,6 @@
 
 int main(int argc, char **argv)
 {
-	/* Setting Variables for shell */
 	char *input = NULL, *path = NULL, *tokenArray[20], *pathArray[20];
 	size_t size = 0;
 	int status = 0;
@@ -29,11 +28,8 @@ int main(int argc, char **argv)
 			free(path);
 			exit(EXIT_SUCCESS);
 		}
-		/* Tokenize the path at the : character */
 		tokenize_string(path, ":", pathArray);
-		/* Tokenize user input at the new line and at the tabs character */
 		tokenize_string(input, " \n\t", tokenArray);
-		/* If there is no user input frees path variable */
 		if (!tokenArray[0])
 		{
 			free(path);
@@ -51,19 +47,4 @@ int main(int argc, char **argv)
 		}
 	}
 	return (status);
-}
-
-/**
-* one_exit - function to handle the freeing and exiting
-*
-* @input: input from getline (to free)
-* @path: path to executable (to free)
-* Return: void
-*/
-
-void one_exit(char *input, char *path)
-{
-    free(input);
-    free(path);
-    exit(EXIT_SUCCESS);
 }
