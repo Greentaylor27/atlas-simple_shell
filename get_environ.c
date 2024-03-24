@@ -7,24 +7,24 @@
 */
 char *get_environ(char **environ)
 {
-int i = 0;
-char *path = NULL;
+	int i = 0;
+	char *path = NULL;
 
-while (environ[i] != NULL)
-{
-    /* Checks if environ is equal to PATH= */
-    if (strncmp(environ[i], "PATH=", 5) == 0)
-    {
-        /* Copies path starting at the sixth character in PATH= string */
-        path = strdup(environ[i] + 5);
-        if (path == NULL)
-        {
-            perror("path");
-            exit(EXIT_FAILURE);
-        }
-        break;
-    }
-    i++;
-}
-return (path);
+	while (environ[i] != NULL)
+	{
+		/* Checks if environ is equal to PATH= */
+	if (strncmp(environ[i], "PATH=", 5) == 0)
+	{
+		/* Copies path starting at the sixth character in PATH= string */
+		path = strdup(environ[i] + 5);
+		if (path == NULL)
+		{
+			perror("path");
+			exit(EXIT_FAILURE);
+		}
+		break;
+	}
+	i++;
+	}
+	return (path);
 }
