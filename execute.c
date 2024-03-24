@@ -21,14 +21,14 @@ int status = 0;
 free(path);
 pid = fork();
 
-if (pid == 0)
-{
-    /* Checks for an error */
-    if (execve(getPath, strArray, environ) == -1)
+    if (pid == 0)
     {
-        perror("execve");
-        exit(EXIT_FAILURE);
-    }
+        /* Checks for an error */
+        if (execve(getPath, strArray, environ) == -1)
+        {
+            perror("execve");
+            exit(EXIT_FAILURE);
+        }
 }
 else if (pid < 0)
     exit(EXIT_FAILURE);
