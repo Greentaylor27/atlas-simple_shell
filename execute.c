@@ -15,31 +15,31 @@
  */
 int execute(char *path, char *getPath, char **strArray)
 {
-    pid_t pid, signal;
-    int status = 0;
+	pid_t pid, signal;
+	int status = 0;
 
-    /* Frees path and begins the forking process */
-    free(path);
-    pid = fork();
+	/* Frees path and begins the forking process */
+	free(path);
+	pid = fork();
 
-    if (pid == 0)
-    {
-        /* Checks for an error */
-        if (execve(getPath, strArray, environ) == -1)
-        {
-            perror("execve");
-            exit(EXIT_FAILURE);
-        }
-    }
-    else if (pid < 0)
-    exit(EXIT_FAILURE);
-    else
-    {
-        /* Waits for the child process to complete and stores the status to status */
-        do {
-            signal = waitpid(pid, &status, WUNTRACED);
-            } while (!WIFEXITED(status) && !WIFSIGNALED(status));
-    }
-    (void)signal;
-    return (status);
+	if (pid == 0)
+	{
+		/* Checks for an error */
+		if (execve(getPath, strArray, environ) == -1)
+		{
+			perror("execve");
+			exit(EXIT_FAILURE);
+		}
+	}
+	else if (pid < 0)
+	exit(EXIT_FAILURE);
+	else
+	{
+		/* Waits for the child process to complete and stores the status to status */
+		do {
+			signal = waitpid(pid, &status, WUNTRACED);
+			} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+	}
+	(void)signal;
+	return (status);
 }
