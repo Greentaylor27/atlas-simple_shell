@@ -14,8 +14,8 @@
 */
 int execute(char *path, char *getPath, char **strArray)
 {
-    pid_t pid, signal;
-    int status = 0;
+pid_t pid, signal;
+int status = 0;
 
     /* Frees path and begins the forking process*/
     free(path);
