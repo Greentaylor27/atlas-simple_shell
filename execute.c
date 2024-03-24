@@ -21,24 +21,24 @@ int status = 0;
 free(path);
 pid = fork();
 
-    if (pid == 0)
+if (pid == 0)
+{
+    /* Checks for an error */
+    if (execve(getPath, strArray, environ) == -1)
     {
-        /* Checks for an error */
-        if (execve(getPath, strArray, environ) == -1)
-        {
-            perror("execve");
-            exit(EXIT_FAILURE);
-        }
-    }
-    else if (pid < 0)
+        perror("execve");
         exit(EXIT_FAILURE);
-    else
-    {
-        /* Waits for the child process to complete and stores the status to status*/
-        do {
-            signal = waitpid(pid, &status, WUNTRACED);
-        } while (!WIFEXITED(status) && !WIFSIGNALED(status));
     }
-    (void)signal;
-    return (status);
+}
+else if (pid < 0)
+    exit(EXIT_FAILURE);
+else
+{
+    /* Waits for the child process to complete and stores the status to status*/
+    do {
+        signal = waitpid(pid, &status, WUNTRACED);
+    } while (!WIFEXITED(status) && !WIFSIGNALED(status));
+}
+(void)signal;
+return (status);
 }
