@@ -24,7 +24,7 @@ char *get_environ(char **environ)
 			exit(EXIT_FAILURE);
 		}
 		strncpy(path, environ[i] + 5, length);
-		path[length] = '\0'
+		path[length] = '\0';
 		break;
 	}
 	i++;
