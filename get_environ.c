@@ -16,12 +16,15 @@ char *get_environ(char **environ)
 	if (strncmp(environ[i], "PATH=", 5) == 0)
 	{
 		/* Copies path starting at the sixth character in PATH= string */
-		path = strdup(environ[i] + 5);
+		size_t length = strlen(environ[i]) - 5;
+		path = (char *)malloc((length + 1) * sizeof(char));
 		if (path == NULL)
 		{
-			perror("path");
+			perror("malloc");
 			exit(EXIT_FAILURE);
 		}
+		strncpy(path, environ[i] + 5, length);
+		path[length] = '\0'
 		break;
 	}
 	i++;
