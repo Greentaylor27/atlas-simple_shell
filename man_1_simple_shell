@@ -1,0 +1,32 @@
+.TH SHELL 1 "March 24, 2024" "Version 1.0" "Simple Shell Manual"
+
+.SH NAME
+shell \- Simple Shell
+
+.SH SYNOPSIS
+.B shell
+
+.SH DESCRIPTION
+\fBshell\fR is a simple shell interpreter for executing Linux commands.
+
+.SH OPTIONS
+Once all files are compiled, run:
+.PP
+\fB$ ./atlas-simple_shell/shell\fR
+
+.SH FILES
+\fI/atlas-simple_shell/shell\fR
+
+.SH AUTHORS
+The \fBshell\fR program was written by Taylor Green.
+.PP
+GitHub repository: https://github.com/Greentaylor27/atlas-simple_shell
+
+.SH SEE ALSO
+.B sh(1)
+
+.SH BUGS
+I know of no bugs.
+
+.SH DATE
+March 24, 2024
