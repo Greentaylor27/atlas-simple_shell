@@ -10,8 +10,8 @@
 
 void one_exit(char *input, char *path)
 {
-    free(input);
-    free(path);
-    exit(EXIT_SUCCESS);
+	free(input);
+	free(path);
+	exit(EXIT_SUCCESS);
 }
 
