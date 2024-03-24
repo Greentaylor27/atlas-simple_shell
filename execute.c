@@ -32,13 +32,13 @@ int execute(char *path, char *getPath, char **strArray)
         }
     }
     else if (pid < 0)
-        exit(EXIT_FAILURE);
+    exit(EXIT_FAILURE);
     else
     {
         /* Waits for the child process to complete and stores the status to status */
         do {
             signal = waitpid(pid, &status, WUNTRACED);
-        } while (!WIFEXITED(status) && !WIFSIGNALED(status));
+            } while (!WIFEXITED(status) && !WIFSIGNALED(status));
     }
     (void)signal;
     return (status);
