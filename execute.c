@@ -24,6 +24,7 @@ int execute(char *path, char *getPath, char **strArray)
 
 	if (pid == 0)
 	{
+		char *envp[] = {NULL};
 		/* Checks for an error */
 		if (execve(getPath, strArray, environ) == -1)
 		{
