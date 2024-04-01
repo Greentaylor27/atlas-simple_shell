@@ -24,9 +24,9 @@ int execute(char *path, char *getPath, char **strArray)
 
 	if (pid == 0)
 	{
-		char *envp[] = {NULL};
+		/* char *envp[] = {NULL}; */
 		/* Checks for an error */
-		if (execve(getPath, strArray, envp) == -1)
+		if (execve(getPath, strArray, environ) == -1)
 		{
 			perror("execve");
 			exit(EXIT_FAILURE);
