@@ -18,7 +18,7 @@ Hello and welcome to Taylor's simple shell project. I am from Cohort 22, this pr
 To get start first clone into the repository
 
 ```bash
-git clone https://github.com/chdrchz/holbertonschool-simple_shell.git
+git clone https://github.com/Greentaylor27/atlas-simple_shell.git
 ```
 Then compile the program using the GCC compiler command
 ```bash
