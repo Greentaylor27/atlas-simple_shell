@@ -15,9 +15,15 @@ char *_path(char *env)
 	if (path == NULL)
 	{
 		free(path);
-		return (0);
+		return (NULL);
 	}
 	path = strtok(env, "\n");/*splits the environment*/
+	if (path == NULL)
+	{
+		printf("Empty environment\n");
+		free(path);
+		return (NULL);
+	}
 	while(path != NULL)
 	{
 		path = strtok(NULL, "\n");
