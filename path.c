@@ -18,7 +18,7 @@ char *_path(char *env)
 		return (0);
 	}
 	path = strtok(env, "\n");/*splits the environment*/
-	while(strtok(NULL, "\n"))
+	while(path != NULL)
 	{
 		path = strtok(NULL, "\n");
 		if (strcmp(path, "PATH=", 5))/*looks for the path variable*/
