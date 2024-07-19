@@ -27,7 +27,7 @@ char *_path(char *env)
 	while(path != NULL)
 	{
 		path = strtok(NULL, "\n");
-		if (strcmp(path, "PATH=", 5))/*looks for the path variable*/
+		if (strncmp(path, "PATH=", 5))/*looks for the path variable*/
 			return (path);
 	}
 	free(path);
