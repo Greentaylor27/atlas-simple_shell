@@ -4,32 +4,18 @@
  * @string: environment to find a path
  * Return: returns path or NULL on fail
  */
-char *_path(char *env)
+char *_path(void)
 {
-	char *path = NULL;
 	int number = 0;
+	char *string = malloc(sizeof(char) * 1024);
 
-	while (env[number] != '\0')/*counts the size of env and allocates memeory*/
-		number++;
-	path = malloc(sizeof(char) * number);
-	if (path == NULL)
+	for (; environ[number] != NULL; number++)
 	{
-		free(path);
-		return (NULL);
+		if (strncmp(environ[number], "PATH=", 5) == 0)
+		{
+			string = environ[number];
+			return (string);
+		}
 	}
-	path = strtok(env, "\n");/*splits the environment*/
-	if (path == NULL)
-	{
-		printf("Empty environment\n");
-		free(path);
-		return (NULL);
-	}
-	while(path != NULL)
-	{
-		path = strtok(NULL, "\n");
-		if (strncmp(path, "PATH=", 5))/*looks for the path variable*/
-			return (path);
-	}
-	free(path);
-	return (NULL);
+	return (0);
 }
