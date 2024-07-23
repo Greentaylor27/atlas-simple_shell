@@ -5,7 +5,7 @@
  * @av: array holding arguements
  * Return: 0 on true and -1 on false
  */
-int main(int ac, char **av)
+int main(void)
 {
 	while(1 < 2)
 	{

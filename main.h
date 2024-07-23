@@ -12,7 +12,7 @@
 extern char **environ;
 
 /* Functions */
-char *_path(char *env);
+char *_path(void);
 char *read_input(void);
 
 #endif
