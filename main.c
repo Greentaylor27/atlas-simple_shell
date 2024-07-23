@@ -7,6 +7,9 @@
  */
 int main(void)
 {
-	printf("%s\n", _path());
-	return (0);
+	while(1 < 2)
+	{
+		interactive_mode(ac, av);
+		return (0);
+	}
 }
