@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 /* Macros */
 #define ERROR -1
@@ -14,5 +15,6 @@ extern char **environ;
 /* Functions */
 char *_path(void);
 char *read_input(void);
+int interactive_mode(int ac, char **av);
 
 #endif

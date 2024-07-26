@@ -5,11 +5,11 @@
  * @av: array holding arguements
  * Return: 0 on true and -1 on false
  */
-int main(void)
+int main(int ac, char **av)
 {
-	while(1 < 2)
-	{
-		interactive_mode(ac, av);
-		return (0);
-	}
+	int number = 0;
+
+	if ((number = interactive_mode(ac, av)) == -1)
+		return (-1);
+	return (1);
 }
