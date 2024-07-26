@@ -15,6 +15,6 @@ extern char **environ;
 /* Functions */
 char *_path(void);
 char *read_input(void);
-int interactive_mode(void);
+int interactive_mode(int ac, char **av);
 
 #endif
