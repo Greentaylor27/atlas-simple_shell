@@ -7,6 +7,9 @@
  */
 int main(void)
 {
-	
+	int number = 0;
+
+	if ((number = interactive_mode()) == -1)
+		return (-1);
 	return (1);
 }
