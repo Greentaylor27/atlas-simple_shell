@@ -8,7 +8,7 @@
 
 /* Macros */
 #define ERROR -1
-
+#define PROMPT "SimpleShell$"
 /* Environ */
 extern char **environ;
 
