@@ -18,6 +18,5 @@ char *read_input(void)
 		printf("Error reading input\n");
 		return (NULL);
 	}
-
 	return (buffer);
 }
