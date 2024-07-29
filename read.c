@@ -6,7 +6,7 @@
 	* Return: Buffer
 */
 
-char *read_input(void)
+char* read_input(void)
 {
 	char *buffer = NULL;
 	size_t len = 0;
@@ -16,6 +16,7 @@ char *read_input(void)
 	if (read == ERROR)
 	{
 		printf("Error reading input\n");
+		free(buffer);
 		return (NULL);
 	}
 	return (buffer);
