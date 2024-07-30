@@ -17,5 +17,6 @@ extern char **environ;
 char *_path(void);
 char *read_input(void);
 int interactive_mode(int ac, char **av);
+int fcheck(char **av, char *buffer);
 
 #endif
