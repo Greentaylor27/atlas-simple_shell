@@ -5,11 +5,19 @@
  * @av: array holding arguements
  * Return: 0 on true and -1 on false
  */
-int main(int ac, char **av)
+int main(void)
 {
-	int number = 0;
+	char *string = NULL;
 
-	if ((number = interactive_mode(ac, av)) == -1)
+	string = malloc(sizeof(char) * strlen(_path()));
+	if (string == NULL)
+	{
+		free(string);
+		printf("fail");
 		return (-1);
+	}
+	string = strcpy(string, _path());
+	printf("%s\n", string);
+	free(string);
 	return (1);
 }

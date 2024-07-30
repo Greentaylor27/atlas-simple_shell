@@ -5,7 +5,7 @@
  */
 int interactive_mode(int ac, char **av)
 {
-	char *buffer = NULL, *path, *exe, *freeme;
+	char *buffer = NULL, *path, *exe;
 	size_t size = 0, coms;
 	ssize_t count = 0;
 	struct stat st;
@@ -23,8 +23,7 @@ int interactive_mode(int ac, char **av)
 			return (-1);
 		}
 		buffer[count - 1] = '\0';/*replaces \n to '\0'*/
-		freeme = _path();
-		path = strtok(freeme, ":=");
+		path = strtok(_path(), ":=");
 		while (path != NULL)
 		{
 			exe = malloc(sizeof(char) * strlen(path) + 3);/*sets up a string to hold our path*/
