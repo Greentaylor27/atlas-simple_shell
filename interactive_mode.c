@@ -23,6 +23,15 @@ int interactive_mode(int ac, char **av)
 			return (-1);
 		}
 		buffer[count - 1] = '\0';/*replaces \n to '\0'*/
+		if (stat(buffer, &st) == 0)
+		{
+			pid = fork();
+			if (pid == 0)
+				execve(buffer, av, environ);
+			wait(NULL);
+		}
+		else
+		
 		path = strtok(_path(), ":=");
 		while (path != NULL)
 		{
