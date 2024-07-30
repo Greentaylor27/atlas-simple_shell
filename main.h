@@ -5,11 +5,11 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 
 /* Macros */
 #define ERROR -1
 #define PROMPT "SimpleShell$"
-
 /* Environ */
 extern char **environ;
 
@@ -17,5 +17,6 @@ extern char **environ;
 char *_path(void);
 char *read_input(void);
 int interactive_mode(int ac, char **av);
+int fcheck(char **av, char *buffer);
 
 #endif

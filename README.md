@@ -1,7 +1,7 @@
 
 # Simple Shell
 
-This is a project aimed to rebuild a simple shell. The difference between this shell and one more commonly used "shell" this is built from the ground up by two people. With that in mind this repo is open to anybody that wants it.
+This is a project aimed to rebuild a simple shell. The difference between this shell and one more commonly used "shell" this is built from the ground up by two people. With that in mind this repo is open to anybody that wants it. This program has only been test with the intergrated ls function. To exit the program, type "exit" to exit the shell.
 
 
 ## Authors
@@ -36,6 +36,11 @@ To run in non-interactive mode run
 ./hsh ls
 ```
 
+## Examples
+With file path<br>
+/bin/ls<br><br>
+without file path<br>
+ls
 
 ## Lessons Learned
 
@@ -50,12 +55,11 @@ The biggest challenge we faced during this section of the project was memory all
 We both for the most part worked on this project remotely, which isn't easy to do on such a massive project. Another challenge we faced was scheduling conflicts, it was hard with busy schedules to sync up and work on the project together other than the dedicated times we either were at school or set aside to work at home.
 ## Known Bugs
 
-Currently the most know bug within the program is 
+Currently the most know bug within the program is
 
 ### 1.
 
 Non-interactive mode is not implemented. (We ran out of time, spent probably too much trying to debug interactive mode)
 
 ### 2.
-
-The loop is not infinite, it starts the program allows one use then exits unexpectedly. From during some research I believe that it is a memory issue somewhere within the code.
+There is a error that props up from valgrind saying there is a write of 1 byte. This is most propably from concatanation 

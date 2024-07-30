@@ -7,9 +7,6 @@
  */
 int main(int ac, char **av)
 {
-	int number = 0;
-
-	if ((number = interactive_mode(ac, av)) == -1)
-		return (-1);
+	interactive_mode(ac, av);
 	return (1);
 }
