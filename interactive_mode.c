@@ -22,8 +22,10 @@ int interactive_mode(int ac, char **av)
 			free (buffer);
 			return (-1);
 		}
-		buffer[count - 1] = '\0';/*replaces \n to '\0'*/
-		if (stat(buffer, &st) == 0)
+		buffer[count - 1] = '\0';
+		if (strcmp(buffer, "exit") == 0)/*hard coded exit*/
+			break;
+		if (stat(buffer, &st) == 0)/*runs a program if file path recognized*/
 		{
 			pid = fork();
 			if (pid == 0)
@@ -36,5 +38,6 @@ int interactive_mode(int ac, char **av)
 				printf("Not a command\n");
 		}
 	}
+	free(buffer);
 	return (1);
 }
