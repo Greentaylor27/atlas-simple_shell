@@ -5,11 +5,11 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 
 /* Macros */
 #define ERROR -1
 #define PROMPT "SimpleShell$"
-
 /* Environ */
 extern char **environ;
 

@@ -5,13 +5,13 @@
  */
 int interactive_mode(int ac, char **av)
 {
-	char *buffer = NULL, *path, *exe;
-	size_t size = 0, coms;
+	char *buffer = NULL;
+	size_t size = 0;
 	ssize_t count = 0;
 	struct stat st;
+	int pid;
 
 	(void)ac;
-	(void)av;
 	while (1)
 	{
 		printf("Enter command >");
@@ -23,19 +23,21 @@ int interactive_mode(int ac, char **av)
 			return (-1);
 		}
 		buffer[count - 1] = '\0';
-		path = strtok(_path(), ":=");
-		while (path != NULL)
+		if (strcmp(buffer, "exit") == 0)/*hard coded exit*/
+			break;
+		if (stat(buffer, &st) == 0)/*runs a program if file path recognized*/
 		{
-			exe = malloc(sizeof(char) * strlen(path) + 3);
-			for (coms = 0; coms < strlen(path); coms++)
-				exe[coms] = path[coms];
-			exe[coms] = '/';
-			for (coms = 0; coms < 2; coms++)
-				exe[coms + strlen(path) + 1] = buffer[coms];
-			if ((stat(exe, &st)) == 0)
-				execve(exe, av, environ);
-			path = strtok(NULL, ":=");
+			pid = fork();
+			if (pid == 0)
+				execve(buffer, av, environ);
+			wait(NULL);
+		}
+		else
+		{
+			if (fcheck(av, buffer) == -1)
+				printf("Not a command\n");
 		}
 	}
+	free(buffer);
 	return (1);
 }
