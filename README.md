@@ -7,7 +7,7 @@ This is a project aimed to rebuild a simple shell. The difference between this s
 ## Authors
 
 - [@Taylor Green](https://www.github.com/Greentaylor27)
-- [@Tsimmuaj Yan](https://github.com/Jimwall0)
+- [@Tsimmuaj Yang](https://github.com/Jimwall0)
 
 
 ## Deployment
