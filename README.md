@@ -9,6 +9,9 @@ This is a project aimed to rebuild a simple shell. The difference between this s
 - [@Taylor Green](https://www.github.com/Greentaylor27)
 - [@Tsimmuaj Yan](https://github.com/Jimwall0)
 
+## Flowchart
+
+![Imgur](https://i.imgur.com/SQLra8e.jpeg)
 
 ## Deployment
 
@@ -56,6 +59,3 @@ Non-interactive mode is not implemented. (We ran out of time, spent probably too
 ### 2.
 
 The loop is not infinite, it starts the program allows one use then exits unexpectedly. From during some research I believe that it is a memory issue somewhere within the code.
-## Flowchart
-
-![Imgur](https://i.imgur.com/SQLra8e.jpeg)
