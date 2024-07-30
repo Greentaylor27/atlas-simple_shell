@@ -5,7 +5,8 @@
  * @av: array holding arguements
  * Return: 0 on true and -1 on false
  */
-int main(void)
+int main(int ac, char **av)
 {
-
+	interactive_mode(ac, av);
+	return (1);
 }
